@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered User List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .user-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #000;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .user-item strong {
+            font-weight: bold;
+        }
+
+        .user-item p {
+            margin: 5px 0;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-list">
+        <h2>Registered User List</h2>
+        {% for user in user_list %}
+            <div class="user-item">
+                <p><strong>Name:</strong> {{ user.First_name }} {{ user.Last_name }}</p>
+                <p><strong>Email:</strong> {{ user.Email }}</p>
+                <p><strong>Address:</strong> {{ user.Address }}</p>
+                <p><strong>Phone Number:</strong> {{ user.Phone_number }}</p>
+                <p><strong>Education Detail:</strong> {{ user.Education_detail }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
